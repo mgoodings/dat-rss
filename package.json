@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "dat-rss",
+  "version": "0.0.1",
+  "description": "Dat feed aggregator (RSS, Atom, JSON)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mgoodings/dat-rss.git"
+  },
+  "keywords": [
+    "feed",
+    "aggregator",
+    "rss",
+    "atom",
+    "json"
+  ],
+  "authors": [
+      "mgoodings <miles.goodings@gmail.com>",
+      "xenador <ben.straube@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgoodings/dat-rss/issues"
+  },
+  "homepage": "https://github.com/mgoodings/dat-rss"
+}
