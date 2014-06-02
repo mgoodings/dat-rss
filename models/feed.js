@@ -1,8 +1,11 @@
 module.exports = function(orm, db) {
   var Feed = db.define('feed', {
-    url: { type: 'text', required: true, unqiue: true },
+    url: { type: 'text', required: true, unique: true },
     title: { type: 'text' }
   }, {
-    timestamp: true
+    timestamp: true,
+    validations: {
+      url: orm.enforce.unique("is not unique")
+    }
   });
 };

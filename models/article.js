@@ -29,7 +29,7 @@ module.exports = function(orm, db) {
   }, {
     timestamp: true,
     validations: {
-      link: orm.enforce.unique("link is not unique")
+      link: orm.enforce.unique("is not unique")
     }
   });
 
