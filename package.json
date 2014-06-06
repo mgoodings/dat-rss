@@ -29,7 +29,9 @@
       "request": "~2.36.0",
       "feedparser": "~0.17.0",
       "orm": "~2.1.14",
+      "orm-paging": "~0.0.1",
       "orm-timestamps": "~0.3.0",
+      "orm-transaction": "~0.0.2",
       "mysql" : "2.0.0-alpha7",
       "restify": "~2.8.1"
   },

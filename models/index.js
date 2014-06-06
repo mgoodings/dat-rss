@@ -1,7 +1,9 @@
 var orm = require('orm'),
-  timestamps = require('orm-timestamps'),
-  config = require('../config'),
-  connection = null;
+    paging = require('orm-paging'),
+    timestamps = require('orm-timestamps'),
+    transaction = require('orm-transaction'),
+    config = require('../config'),
+    connection = null;
 
 function setup(db, callback) {
   require('./feed')(orm, db);
@@ -23,7 +25,10 @@ module.exports = function(callback) {
     connection = db;
 
     db.settings.set('instance.returnAllErrors', true);
+
+    db.use(paging);
     db.use(timestamps);
+    db.use(transaction);
 
     setup(db, callback);
   });
