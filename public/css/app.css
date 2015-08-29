@@ -1,0 +1,34 @@
+html{
+    height: 100%;
+}
+body {
+    max-height: 100%;
+    overflow-y: scroll;
+}
+.panel {
+    float: left;
+    min-height: 100%;
+}
+.p-25 {
+    width: 20%;
+}
+.p-50 {
+    width: 60%;
+}
+ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    background: #EEEEEE;
+    color: #252525;
+    font-size: 14px;
+    padding: 10px;
+    position: relative;
+    transform: translateZ(0px);
+    z-index: 2;
+}
+ul li:nth-child(2n+1) {
+    background: #FFFFFF;
+}
