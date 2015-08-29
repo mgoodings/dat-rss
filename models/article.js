@@ -11,6 +11,10 @@ module.exports = function(orm, db) {
     author: {
       type: 'text'
     },
+    summary: {
+      type: 'text',
+      big: true
+    },
     description: {
       type: 'text',
       big: true

@@ -119,6 +119,7 @@ FeedImporter.prototype = {
       article.link = item.link;
       article.title = item.title;
       article.author = item.author;
+      article.summary = item.summary;
       article.description = item.description;
       article.published_at = new Date(item.pubDate);
       article.updated_at = new Date(item.date);

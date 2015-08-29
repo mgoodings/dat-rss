@@ -101,9 +101,14 @@ function destroyFeed(req, res, next) {
 
 function listArticles(req, res, next) {
   var Article = req.models.article,
-      page = req.query.page;
+      page = req.query.page,
+      query = {};
 
-  Article.pages(function(err, pages) {
+  if (req.params.feed_id) {
+    query.feed_id = parseInt(req.params.feed_id, 10);
+  }
+
+  Article.find(query).pages(function(err, pages) {
     if (page < 1) {
       page = 1;
     }
@@ -112,7 +117,7 @@ function listArticles(req, res, next) {
       page = pages;
     }
 
-    Article.page(page).order("-published_at").run(function(err, articles) {
+    Article.page(page).find(query).order("-published_at").run(function(err, articles) {
       if (err) {
         return next(err);
       }
@@ -167,6 +172,11 @@ function createServer(db) {
   server.head('/articles', listArticles);
   server.get('/articles/:id', getArticle);
   server.head('/articles/:id', getArticle);
+
+  server.get('/feeds/:feed_id/articles', listArticles);
+  server.head('/feeds/:feed_id/articles', listArticles);
+  server.get('/feeds/:feed_id/articles/:id', getArticle);
+  server.head('/feeds/:feed_id/articles/:id', getArticle);
 
   server.get(/\/?.*/, restify.serveStatic({
     directory: './public',
